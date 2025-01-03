@@ -13,6 +13,7 @@ import Users from './components/Users'
 import UserDetails from './components/UserDetails'
 import BobaList from './components/BobaList'
 import BobaForm from './components/BobaForm'
+import Chat from './components/Chat'
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
@@ -106,12 +107,12 @@ function App() {
         <Route path="/teaItems" element={<TeaItem teaItems={currentUser.teaItems} loggedIn={loggedIn} loading={loading} />} />
         <Route path="/teaItems/new" element={<TeaItemForm addTeaItem={addTeaItem} />} />
         <Route path="/teaItems/:id/edit" element={<TeaItemEditForm currentUser={currentUser} loggedIn={loggedIn} userLoading={loading} updateTeaItem={updateTeaItem} />} />
-        {/* I think I imported teaitemform here? */}
         <Route path="/teaItems/:id" element={<TeaItemDetails currentUser={currentUser} loggedIn={loggedIn} userLoading={loading} deleteTeaItem={deleteTeaItem} />} />
         <Route path="/bobas" element={<BobaList bobas={bobas} />} />
         <Route path="/bobas/new" element={<BobaForm addBoba={addBoba} loggedIn={loggedIn} />} />
         <Route path="/signup" element={<Signup loginUser={loginUser} />} />
         <Route path="/login" element={<Login loginUser={loginUser} />} />
+        <Route path="/chat" element={<Chat />} />
       </Routes>
     </Router>
   )

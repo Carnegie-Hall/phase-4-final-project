@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { baseUrl } from '../globals'
+// import { baseUrl } from '../globals'
 
 const TeaItemDetails = ({ currentUser, loggedIn, userLoading, deleteTeaItem }) => {
     const [teaItem, setTeaItem] = useState({})
@@ -12,7 +12,7 @@ const TeaItemDetails = ({ currentUser, loggedIn, userLoading, deleteTeaItem }) =
         if (userLoading && !currentUser.id) {
             navigate("/login")
         }
-        fetch(baseUrl + "/api/teaItems/" + id)
+        fetch("/api/teaItems/" + id)
             .then(resp => resp.json())
             .then(data => {
                 setTeaItem(data)

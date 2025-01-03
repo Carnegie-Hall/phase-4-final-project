@@ -22,6 +22,7 @@ const Navbar = ({ currentUser, loggedIn, logoutUser }) => {
         <li><Link to="/bobas"> View Bobas</Link></li>
         <li><Link to="/bobas/new"> Create Bobas</Link></li>
         <li><Link to="#" onClick={handleLogout}>Logout</Link></li>
+        <li><Link to="/chat">Boba Chat!</Link></li>
         <li>{currentUser.username}</li>
     </>
 
